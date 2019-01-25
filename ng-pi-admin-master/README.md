@@ -9,7 +9,7 @@ Default | Dark | Light
 
 
 ## Based on
-Angular 4+, Angular CLI, TypeScript, Scss, Bootstrap
+Angular 6, Angular CLI, TypeScript, Scss, Bootstrap
 
 ## Demo
 
