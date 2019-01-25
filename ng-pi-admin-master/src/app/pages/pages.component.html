@@ -1,0 +1,21 @@
+<div class="pages-wrap">
+  <pages-top></pages-top>
+  
+  <mat-sidenav-container class="pages-body">
+    <mat-sidenav mode="side" [(opened)]="sidebarToggle">
+      <sidebar></sidebar>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="pages-content">
+      <content-top></content-top>
+      <router-outlet></router-outlet>
+      <notification></notification>
+    </mat-sidenav-content>
+
+    <mat-sidenav mode="side" position="end" [(opened)]="configToggle">
+      <right-config></right-config>
+    </mat-sidenav>
+  </mat-sidenav-container>
+  
+</div>
+<loading [loading]="false"></loading>
