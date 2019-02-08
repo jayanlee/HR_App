@@ -4,8 +4,8 @@
       <img src="{{avatarImgSrc}}" alt="avatar" class="img-responsive">
     </div>
     <div class="user-info-wrap pull-left">
-      <mat-card-title class="user-name" title="{{userName}}">{{userName}}</mat-card-title>
-      <span class="user-post" title="{{userPost}}">{{userPost}}</span>
+      <mat-card-title class="user-name" title="{{userName}}">{{userDetails.firstName}} {{userDetails.lastName}}</mat-card-title>
+      <span class="user-post" title="{{userPost}}">{{userDetails.attributes.role[0]}}, {{userDetails.attributes.specialisation[0]}}</span>
     </div>
     <div class="collapse-menu pull-right" (click)="toggleBar('sidebar')">
       <!-- <i class="fa fa-navicon fa-fw" [ngClass]="{'toggle-on':sidebarToggle,'toggle-off':!sidebarToggle}"></i> -->

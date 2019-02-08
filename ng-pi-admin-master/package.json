@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build --base-href ./",
     "build:prod": "ng build --prod --base-href ./",
     "build:ci": "ng build --prod --base-href ./",
@@ -33,6 +33,7 @@
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
+    "keycloak-angular": "^6.0.0",
     "moment": "^2.24.0",
     "ng2-file-upload": "^1.3.0",
     "ng2-select": "^2.0.0",

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { GlobalService } from '../../services/global.service';
+import { KeycloakProfile } from 'keycloak-js';
 
 @Component({
   selector: 'pages-top',
@@ -8,8 +9,7 @@ import { GlobalService } from '../../services/global.service';
 })
 export class PagesTopComponent {
   avatarImgSrc: string = 'assets/images/jayan.jpg';
-  userName: string = 'Jayan Leander';
-  userPost: string = 'Developer, Full Stack';
+  @Input() userDetails: KeycloakProfile;
   configToggle: boolean = false;
   sidebarToggle: boolean = true;
   tip = { ring: true, email: true };
