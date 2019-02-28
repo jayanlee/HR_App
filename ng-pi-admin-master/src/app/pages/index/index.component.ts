@@ -1,4 +1,4 @@
-import { Component, OnInit,  AfterViewChecked, ViewChild, ViewContainerRef, ComponentFactoryResolver, ComponentRef, ComponentFactory, ViewChildren,QueryList } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, ComponentFactoryResolver, ViewChildren,QueryList } from '@angular/core';
 import { ChartsService } from '../charts/components/echarts/charts.service';
 import { TodolistComponent } from '../../../app/shared/components/todolist/todolist.component';
 import { ProfileComponent } from '../../../app/shared/components/profile/profile.component';
@@ -12,7 +12,7 @@ import {CdkDragDrop, moveItemInArray,copyArrayItem} from '@angular/cdk/drag-drop
   styleUrls: ['./index.component.scss'],
   providers: [ChartsService]
 })
-export class IndexComponent implements OnInit, AfterViewChecked {
+export class IndexComponent implements OnInit {
   showloading: boolean = false;
   @ViewChildren('messagecontainer', { read: ViewContainerRef }) entry: QueryList<ViewContainerRef>;
   // @ViewChildren('messagecontainer') displayFlag;
