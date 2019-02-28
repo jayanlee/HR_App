@@ -11,12 +11,15 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatInputModule} from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatChipsModule} from '@angular/material/chips';
+
 @NgModule({
   imports: [MatButtonModule, MatToolbarModule, MatIconModule, MatTableModule,MatSidenavModule,
     MatFormFieldModule, MatPaginatorModule, MatSortModule, MatInputModule, MatGridListModule, MatCardModule, MatTabsModule, MatCheckboxModule, MatDatepickerModule
-    , MatNativeDateModule, MatSelectModule, MatExpansionModule, MatDialogModule, MatSnackBarModule,MatRadioModule],
+    , MatNativeDateModule, MatSelectModule, MatExpansionModule, MatDialogModule, MatSnackBarModule,MatRadioModule,DragDropModule,MatChipsModule],
   exports: [MatButtonModule, MatToolbarModule, MatIconModule, MatTableModule,MatSidenavModule,
     MatFormFieldModule, MatPaginatorModule, MatSortModule, MatInputModule, MatGridListModule, MatCardModule, MatTabsModule, MatCheckboxModule, MatDatepickerModule
-    , MatNativeDateModule, MatSelectModule, MatExpansionModule, MatDialogModule, MatSnackBarModule,MatRadioModule],
+    , MatNativeDateModule, MatSelectModule, MatExpansionModule, MatDialogModule, MatSnackBarModule,MatRadioModule,DragDropModule,MatChipsModule],
 })
 export class MaterialModule {}

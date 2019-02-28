@@ -32,7 +32,8 @@ export class AppComponent implements OnInit {
     this._sidebarToggle();
     if (await this.keycloakService.isLoggedIn()) {
       this.userDetails = await this.keycloakService.loadUserProfile();
-      console.log(this.userDetails);
+      localStorage.setItem('userDetails', JSON.stringify(this.userDetails));
+      this._globalService.dataBusChanged('setStorage','');
     }
   }
   public _sidebarToggle() {

@@ -22,5 +22,7 @@
         border-top: 1px solid $border-color;
         color: $fonts-color;
         overflow-x: hidden;
+        height: -moz-available;          /* WebKit-based browsers will ignore this. */
+        height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */ 
     }
 }

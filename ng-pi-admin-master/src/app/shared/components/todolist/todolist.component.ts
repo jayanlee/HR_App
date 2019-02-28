@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostBinding } from '@angular/core';
 import { TodoListService } from './todolist.service';
 @Component({
   selector: 'du-todolist',
   templateUrl: './todolist.component.html',
   styleUrls: ['./todolist.component.scss'],
+  host: { 
+      'cdkDrag': "", 
+   }, 
   providers: [TodoListService]
 })
-
 export class TodolistComponent implements OnInit {
 
   todolist: Array<any> = [];

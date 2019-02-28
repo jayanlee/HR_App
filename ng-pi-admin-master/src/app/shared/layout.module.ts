@@ -12,6 +12,7 @@ import { MenuComponent } from './layouts/menu/menu.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { ContentTopComponent } from './layouts/content-top/content-top.component';
 import { PagesTopComponent } from './layouts/pages-top/pages-top.component';
+import { GtnHeaderComponent } from './layouts/gtn-header/gtn-header.component';
 import { RightConfigComponent } from './layouts/right-config/right-config.component';
 
 
@@ -31,6 +32,7 @@ import { RightConfigComponent } from './layouts/right-config/right-config.compon
         PagesTopComponent,
         ContentTopComponent,
         NotificationComponent,
+        GtnHeaderComponent,
         RightConfigComponent,
         LoadingComponent
     ],
@@ -39,6 +41,7 @@ import { RightConfigComponent } from './layouts/right-config/right-config.compon
         PagesTopComponent,
         ContentTopComponent,
         NotificationComponent,
+        GtnHeaderComponent,
         RightConfigComponent,
         LoadingComponent
     ]

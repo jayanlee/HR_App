@@ -1,0 +1,54 @@
+<header id="header">
+    <div id="logo-group">
+        <span id="logo">Gtn App</span>
+        <span id="activity" class="activity-dropdown"> <i class="fa fa-user"></i> <b class="badge bg-color-red bounceIn animated"> 21 </b> </span>
+    </div>
+
+    <!-- #PROJECTS: projects dropdown -->
+    <div class="project-context hidden-xs">
+
+        <span class="label">Projects:</span>
+        <span class="project-selector dropdown-toggle" data-toggle="dropdown">Recent projects <i class="fa fa-angle-down"></i></span>
+
+        <!-- Suggestion: populate this list with fetch and push technique -->
+        <ul class="dropdown-menu">
+            <li>
+                <a href="javascript:void(0);">Online e-merchant management system - attaching integration with the iOS</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">Notes on pipeline upgradee</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">Assesment Report for merchant account</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="javascript:void(0);"><i class="fa fa-power-off"></i> Clear</a>
+            </li>
+        </ul>
+        <!-- end dropdown-menu-->
+    </div>
+    
+    <div class="msg-tips-wrap col-lg-2 pull-right">
+        <div class="msg-entrance ring">
+            <span class="fa fa-bell fa-fw"></span>
+            <span class="badge" *ngIf="tip.ring"></span>
+        </div>
+        <div class="msg-entrance email">
+            <span class="fa fa-envelope fa-fw"></span>
+            <span class="badge" *ngIf="tip.email"></span>
+        </div> 
+        <button class="config-switch" (click)="_configToggle()">
+            <i class="fa fa-tasks" *ngIf="configToggle"></i>
+            <i class="fa fa-chevron-right" *ngIf="!configToggle"></i>
+        </button>
+    </div>
+
+    <div class="search-group col-lg-2 pull-right">
+        <input type="text" class="search-input" placeholder="Search project · · ·">
+        <button class="search-btn pull-right">
+            <i class="fa fa-search fa-fw"></i>
+        </button>
+    </div>
+
+</header>

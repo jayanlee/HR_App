@@ -2,21 +2,22 @@
 $default-text:14px;
 $sm-text:12px;
 $lg-text:16px;
-$body-bg:#fff;
-$sidebar-bg:#465294;
-$sidebar-fonts-color:#fff;
-$card-bg:#fff;
+$body-bg:#f3f3f3;
+$sidebar-bg:#22426c;
+$sidebar-fonts-color:#f2f2f2;
+$card-bg:#f3f3f3;
 $card-border:#e4e3e3;
 $white:#fff;
 $black:#000;
 $border-color:rgba($black, .1);
 $table-border-color:#e6e6e6;
 $fonts-color:#26253c;
-$primary:#fca400;
+$primary:#ffffff;
 $success:#16be9a;
 $danger:#fa5167;
 $warning:#ff7403;
 $info:#2cc3ff;
+$icon-color:#474544;
 body {
     background: $body-bg;
 }

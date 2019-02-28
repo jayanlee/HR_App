@@ -23,6 +23,7 @@ export class RightConfigComponent {
   constructor(private keycloakService: KeycloakService) {}
 
   async doLogout() {
+    
     await this.keycloakService.logout();
   }
 }

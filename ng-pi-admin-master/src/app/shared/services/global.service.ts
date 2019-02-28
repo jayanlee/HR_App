@@ -45,6 +45,11 @@ export class GlobalService {
             value: value
         })
     }
+    public createComponent(resolver,component,entry){
+        const factory = resolver.resolveComponentFactory(component);
+        const componentRef = entry.toArray()[entry.toArray().length-1].createComponent(factory);
+        //console.log(componentRef);
+    }
 }
 
 

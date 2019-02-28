@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,OnInit } from '@angular/core';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import { GlobalService } from '../../services/global.service';
 import { KeycloakProfile } from 'keycloak-js';
 
@@ -7,15 +8,35 @@ import { KeycloakProfile } from 'keycloak-js';
   templateUrl: './pages-top.component.html',
   styleUrls: ['./pages-top.component.scss'],
 })
-export class PagesTopComponent {
+export class PagesTopComponent implements OnInit{
   avatarImgSrc: string = 'assets/images/jayan.jpg';
-  @Input() userDetails: KeycloakProfile;
+  userDetails: object;
   configToggle: boolean = false;
   sidebarToggle: boolean = true;
   tip = { ring: true, email: true };
-
-  constructor(private _globalService: GlobalService) { }
-
+  todo = [
+    'TodoList',
+    'profile',
+    'weather'
+  ];
+  
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    }
+  }
+  constructor(private _globalService: GlobalService) {   }
+  async ngOnInit() {
+    this._globalService.data$.subscribe(data => {
+      if (data.ev === 'setStorage') {
+        this.userDetails = JSON.parse(localStorage.getItem('userDetails'));
+      }
+    }, error => {
+      console.log('Storage setting failed: ' + error);
+    });
+    // this.userDetails = JSON.parse(localStorage.getItem('userDetails'));
+    // console.log(this.userDetails);
+  }
   public toggleBar(value) {
     /* this._globalService.sidebarToggle$.subscribe(sidebarToggle => {
       this.sidebarToggle = sidebarToggle;

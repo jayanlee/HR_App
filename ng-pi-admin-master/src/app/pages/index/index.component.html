@@ -43,24 +43,24 @@
       </button>
     </div>
   </div>
-  <div class="col-md-8">
+  <!-- <div class="col-md-8">
     <card cardTitle='Bar Chart' isCollapse="true">
       <div echarts [options]="AnimationBarOption" [loading]="showloading" theme="dark"></div>
     </card>
+  </div> -->
+  <div class="col-md-12">
+    <div
+        cdkDropList
+        id="doneList"
+        [cdkDropListData]="done"
+        [cdkDropListConnectedTo]="['todoList']"
+        class="example-list row"
+        (cdkDropListDropped)="drop($event)">
+        <div cdkDrag class="example-box col-md-4" *ngFor="let item of done"><mat-card><ng-template #messagecontainer></ng-template></mat-card></div>
+    </div>
   </div>
-  <div class="col-md-4">
-    <card cardTitle="Todo List" isCollapse="true">
-      <du-todolist></du-todolist>
-    </card>
-  </div>
-  <div class="col-md-6">
-    <card>
-      <profile></profile>
-    </card>
-  </div>
-  <div class="col-md-6">
-    <card>
-      <weather></weather>
-    </card>
-  </div>
+  <!-- <div class="col-md-6">
+    
+    <weather></weather>
+  </div> -->
 </div>

@@ -1,48 +1,48 @@
 @import '../../theme/conf';
+// .example-container {
+//   width: 400px;
+//   max-width: 100%;
+// }
+.mat-chip.mat-standard-chip {
+    background-color: $body-bg;
+    color: $fonts-color;
+}
+.example-list {
+  min-height: 60px;
+  color: white;
+}
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
 .pages-top {
-    // position: relative;
     width: 100%;
-    // height: 81px;
     display: flex;
     background: $sidebar-bg;
     border: none;
-    padding: 1%;
+    padding: .5% 1%;
+    border-bottom: .3px solid #d2dcf0;
 }
 
+.dragg{
+    cursor: pointer;
+    color: white;
+}
 .avatar-wrap {
-    // position: absolute;
-    // top: 50%;
-    // left: 10px;
-    // transform: translate(0, -50%);
-    // padding: 15px 0;
-    // margin: 0 auto;
-    // display: flex;
-    // flex-direction: row;
-    // width: 240px;
-    // height: auto;
-    // min-height: 50px;
-    // box-shadow: none!important;
-    //@include transition(all .4s);
+    height: fit-content;
     .avatar {
-        // width: 50px;
-        // height: 50px;
-        // border-radius: 5px;
-        // overflow: hidden;
-        width: 17%;
+        width: 15%;
         height: auto;
-        //@include transition(all .4s);
         img {
-            // display: block;
-            // width: 100%;
             border-radius: 50%;
         }
     }
     .user-info-wrap {
-        // padding: 2px 14px;
-        // width: 170px;
-        // height: auto;
-        // @include transition(all .4s);
-        padding: 2% 5%;
+        padding: 0.5% 2%;
     }
     .user-name,
     .user-post {
@@ -64,10 +64,6 @@
 }
 
 .collapse-menu {
-    position: absolute;
-    top: 50%;
-    left: 250px;
-    transform: translate(0, -50%);
     color: $sidebar-fonts-color;
     font-size: 24px;
     cursor: pointer;
@@ -86,113 +82,10 @@
     }
 }
 
-.search-group {
-    // position: absolute;
-    // top: 50%;
-    // right: 170px;
-    // transform: translate(0, -50%);
-    // width: 340px;
-    // background: $border-color;
-    // border: 1px solid $border-color;
-    // border-radius: 2px;
-    // overflow: hidden;
-    margin-top: 1%;
-    .search-input {
-        width: 300px;
-        height: 40px;
-        background: $border-color;
-        border: none;
-        outline: none;
-        color: $sidebar-fonts-color;
-        font-size: $sm-text;
-        text-indent: 1.5em;
-    }
-    .search-btn {
-        position: relative;
-        // top: -1px;
-        // right: 1px;
-        top: 10%;
-        right: 10%;
-        width: 30px;
-        height: 30px;
-        background: $primary;
-        border: 0;
-        border-radius: 50%;
-        outline: none;
-        line-height: 30px;
-        text-align: center;
-        color: $body-bg;
-        // transform: scale(0);
-        // transition: all .4s;
-        &:hover {
-            background: lighten($primary, 10%);
-            transform: scale(1);
-        }
-    }
-    .search-input:focus+.search-btn {
-        transform: scale(1);
-    }
-}
-
-.msg-tips-wrap {
-    display: flex;
-    // flex-wrap: nowrap;
-    // position: absolute;
-    // top: 50%;
-    // right: 60px;
-    // transform: translate(0, -50%);
-    // width: 100px;
-    // height: 40px;
-    // color: $sidebar-fonts-color;
-    // @include transition(all .4s);
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.msg-entrance {
-    position: relative;
-    width: 50px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    @include transition(all .4s);
-    color: $sidebar-fonts-color;
-    &:hover {
-        cursor: pointer;
-        color: $primary;
-    }
-    span.badge {
-        padding: 0;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        display: block;
-        width: 11px;
-        height: 11px;
-        background: $primary;
-        border: 2px solid $sidebar-bg;
-        border-radius: 50%;
-    }
-}
-
-.config-switch {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    background: $sidebar-bg;
-    border: none;
-    outline: none;
-    color: $sidebar-fonts-color;
-    font-size: $lg-text;
-    @include transition(all .4s);
-    &:hover {
-        color: $primary;
-    }
-}
-
 @media (max-width:414px) {
     .avatar-wrap {
         width: auto;
+        border-bottom: 1px solid #525151;
         .avatar {
             border-radius: 50px;
         }

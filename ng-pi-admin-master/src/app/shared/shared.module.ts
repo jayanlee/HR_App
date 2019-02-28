@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { JsonpModule } from '@angular/http';
+import { MaterialModule } from '../shared/material.module';
 
 /* components */
 import { CardComponent } from './components/card/card.component';
@@ -23,6 +24,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     NgxPaginationModule,
     FormsModule,
     ReactiveFormsModule,
+    MaterialModule,
     JsonpModule,
   ],
   declarations: [

@@ -1,0 +1,200 @@
+@import '../../theme/conf';
+#header>:first-child, aside {
+    width: 220px;
+}
+#header>div {
+    vertical-align: middle;
+    height: 49px;
+    float: left;
+}
+#project-context, .project-context {
+    padding: 7px 13px 0;
+    position: relative;
+}
+#logo-group>span {
+    height: 39px;
+    float: left;
+}
+#logo-group *, .login-info, .login-info *, .minified .menu-item-parent {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+#logo {
+    display: inline-block;
+    width: 175px;
+    margin-top: 13px;
+    margin-left: 9px;
+}
+#logo-group span#activity {
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    cursor: default!important;
+    display: inline-block;
+    font-weight: 700;
+    height: 24px;
+    width: 24px;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none!important;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    background-color: #e2e2e2;
+    border: 1px solid #bfbfbf;
+    color: #c4bab6;
+    font-size: 19px;
+    margin: 10px 0 0;
+    position: relative;
+}
+
+#activity b.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    cursor: pointer;
+    background: #0091d9;
+    display: inline-block;
+    font-size: 10px;
+    box-shadow: inset 1px 1px 0 rgba(0,0,0,.1), inset 0 -1px 0 rgba(0,0,0,.07);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    padding: 2px 4px 3px;
+    text-align: center;
+    line-height: normal;
+}
+.ajax-dropdown>:first-child {
+    margin: 0 0 3px;
+    padding: 0 0 9px;
+}
+.ajax-notifications {
+    height: 365px;
+    display: block;
+    overflow: auto;
+    margin-right: -10px;
+    margin-left: -10px;
+    border-bottom: 1px solid #CECECE;
+    border-top: 1px solid #CECECE;
+    background: #E9E9E9;
+}
+.ajax-dropdown>:last-child {
+    font-size: 13px;
+    display: block;
+    padding: 5px 0;
+    line-height: 22px;
+    font-weight: 400;
+}
+.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.ajax-dropdown .btn-group .btn {
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.ajax-notifications .alert.alert-transparent {
+    background-color: transparent;
+    border-color: transparent;
+    color: #757575;
+    margin: 13px 10px;
+}
+#project-context>:first-child, .project-context>:first-child {
+    display: block;
+    color: #bfbfbf;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0 0 1px #fff;
+    padding-left: 0;
+    text-align: left;
+}
+#project-context>span, .project-context>span {
+    display: block;
+}
+#project-selector, .project-selector {
+    max-width: 97%;
+    white-space: nowrap;
+    background: 0 0;
+    border: none;
+    padding: 0;
+    text-align: left;
+    color: #555;
+    font-size: 14px;
+    cursor: pointer;
+}
+.search-group {
+    .search-input {
+        width: 300px;
+        height: 40px;
+        border: 1px solid $card-border;
+        outline: none;
+        font-size: $sm-text;
+        text-indent: 1.5em;
+        margin-top: 5px;
+    }
+    .search-btn {
+        position: absolute;
+        top: 20%;
+        right: 2%;
+        width: 30px;
+        height: 30px;
+        background: $white;
+        border: 0;
+        border-radius: 50%;
+        outline: none;
+        line-height: 30px;
+        text-align: center;
+        &:hover {
+            background: lighten($primary, 10%);
+            transform: scale(1);
+        }
+    }
+    .search-input:focus+.search-btn {
+        transform: scale(1);
+    }
+}
+.msg-tips-wrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.msg-entrance {
+    position: relative;
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    @include transition(all .4s);
+    color: $icon-color;
+    &:hover {
+        cursor: pointer;
+    }
+    span.badge {
+        padding: 0;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: block;
+        width: 11px;
+        height: 11px;
+        background: $primary;
+        border: 2px solid $sidebar-bg;
+        border-radius: 50%;
+    }
+}
+
+.config-switch {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: $body-bg;
+    border: none;
+    outline: none;
+    color: $icon-color;
+    font-size: $lg-text;
+    @include transition(all .4s);
+}
