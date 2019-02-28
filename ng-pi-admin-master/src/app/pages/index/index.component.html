@@ -51,12 +51,13 @@
   <div class="col-md-12">
     <div
         cdkDropList
+        cdkDropListOrientation="horizontal"
         id="doneList"
         [cdkDropListData]="done"
         [cdkDropListConnectedTo]="['todoList']"
         class="example-list row"
         (cdkDropListDropped)="drop($event)">
-        <div cdkDrag class="example-box col-md-4" *ngFor="let item of done"><mat-card><ng-template #messagecontainer></ng-template></mat-card></div>
+        <div cdkDrag class="example-box col-md-4" *ngFor="let item of done"><ng-template #messagecontainer></ng-template></div>
     </div>
   </div>
   <!-- <div class="col-md-6">
