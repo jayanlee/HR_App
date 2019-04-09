@@ -13,13 +13,14 @@ import { MatRadioModule } from '@angular/material/radio';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatStepperModule} from '@angular/material/stepper';
 
 @NgModule({
   imports: [MatButtonModule, MatToolbarModule, MatIconModule, MatTableModule,MatSidenavModule,
     MatFormFieldModule, MatPaginatorModule, MatSortModule, MatInputModule, MatGridListModule, MatCardModule, MatTabsModule, MatCheckboxModule, MatDatepickerModule
-    , MatNativeDateModule, MatSelectModule, MatExpansionModule, MatDialogModule, MatSnackBarModule,MatRadioModule,DragDropModule,MatChipsModule],
+    , MatNativeDateModule, MatSelectModule, MatExpansionModule, MatDialogModule, MatSnackBarModule,MatRadioModule,DragDropModule,MatChipsModule,MatStepperModule],
   exports: [MatButtonModule, MatToolbarModule, MatIconModule, MatTableModule,MatSidenavModule,
     MatFormFieldModule, MatPaginatorModule, MatSortModule, MatInputModule, MatGridListModule, MatCardModule, MatTabsModule, MatCheckboxModule, MatDatepickerModule
-    , MatNativeDateModule, MatSelectModule, MatExpansionModule, MatDialogModule, MatSnackBarModule,MatRadioModule,DragDropModule,MatChipsModule],
+    , MatNativeDateModule, MatSelectModule, MatExpansionModule, MatDialogModule, MatSnackBarModule,MatRadioModule,DragDropModule,MatChipsModule,MatStepperModule],
 })
 export class MaterialModule {}

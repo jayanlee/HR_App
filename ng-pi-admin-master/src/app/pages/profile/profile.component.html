@@ -1,40 +1,251 @@
 <div class="row">
-  <div class="col-md-4">
-    <profile></profile>
-  </div>
-  <div class="col-md-8">
-    <div class="row card card-block">
-      <div class="col-md-6 form-group">
-        <label class="control-label">Username</label>
-        <input type="text" class="form-control" placeholder="Username">
+  <mat-tab-group disableRipple animationDuration="0ms" mat-align-tabs="start">
+    <mat-tab label="My Profile">
+      <div class="col-md-4">
+        <profile></profile>
       </div>
-      <div class="col-md-6 form-group">
-        <label class="control-label">Userpost</label>
-        <input type="text" class="form-control" placeholder="Userpost">
-      </div>
-      <div class="col-md-4 form-group">
-        <label class="control-label">Username</label>
-        <input type="text" class="form-control" placeholder="Username">
-      </div>
-      <div class="col-md-4 form-group">
-        <label class="control-label">Username</label>
-        <input type="text" class="form-control" placeholder="Username">
-      </div>
-      <div class="col-md-4 form-group">
-        <label class="control-label">Username</label>
-        <input type="text" class="form-control" placeholder="Username">
-      </div>
-      <div class="col-md-12 form-group">
-        <label class="control-label">Username</label>
-        <input type="text" class="form-control" placeholder="Username">
-      </div>
-      <div class="col-md-12 form-group">
-        <label class="control-label">Username</label>
-        <textarea class="form-control" placeholder="Username"></textarea>
-      </div>
+    </mat-tab>
+
+    <mat-tab label="Personal Information">Content 2</mat-tab>
+    <mat-tab label="Educational Information">Content 3</mat-tab>
+    <mat-tab label="Joining">
       <div class="col-md-12">
-        <button class="btn btn-primary">Update Profile</button>
+
+        <mat-horizontal-stepper linear #stepper>
+
+          <mat-step [stepControl]="firstFormGroup" [editable]="true">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Personal Information</ng-template>
+              <div class="info-container col-md-8">
+                <mat-form-field>
+                  <input matInput placeholder="First name" required [formControl]="firstnameFormControl">
+                  <mat-error *ngIf="firstnameFormControl.invalid">{{getFirstNameErrorMessage()}}</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Middle name">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Last name" required [formControl]="lastnameFormControl">
+                  <mat-error *ngIf="lastnameFormControl.invalid">{{getLastNameErrorMessage()}}</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Email" required [formControl]="emailFormControl">
+                  <mat-error *ngIf="emailFormControl.invalid">{{getEmailErrorMessage($index)}}</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Mobile Number" required formControlName="phone">
+                  <mat-error *ngIf="phoneFormControl.invalid">{{getPhoneErrorMessage(phone)}}</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Secondary Number" formControlName="secPhone">
+                  <mat-error *ngIf="phoneFormControl.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                </mat-form-field>
+
+                <div formGroupName="currentAddress" class="info-container col-md-12">
+                  <h3>Current Address</h3>
+                  <mat-form-field>
+                    <input matInput placeholder="Door No" required formControlName="door">
+                    <mat-error *ngIf="phoneFormControl.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="Street1" required formControlName="street1">
+                    <mat-error *ngIf="phoneFormControl.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="Street2" formControlName="street2">
+                    <mat-error *ngIf="phoneFormControl.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="City" required formControlName="city">
+                    <mat-error *ngIf="phoneFormControl.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="State" required formControlName="state">
+                    <mat-error *ngIf="phoneFormControl.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="Pin Code" required formControlName="pincode">
+                    <mat-error *ngIf="phoneFormControl.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div formGroupName="permanentAddress" class="info-container col-md-12">
+                  <h3>Permanent Address</h3>
+                  <mat-form-field>
+                    <input matInput placeholder="Door No" required formControlName="door">
+                    <mat-error *ngIf="phoneFormControl.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="Street1" required formControlName="street1">
+                    <mat-error *ngIf="phoneFormControl.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="Street2" formControlName="street2">
+                    <mat-error *ngIf="phoneFormControl.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="City" required formControlName="city">
+                    <mat-error *ngIf="phoneFormControl.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="State" required formControlName="state">
+                    <mat-error *ngIf="phoneFormControl.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="Pin Code" required formControlName="pincode">
+                    <mat-error *ngIf="phoneFormControl.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                </div>
+
+              </div>
+
+              <div class="col-md-12 button-group">
+                <button mat-raised-button matStepperNext color="primary" [disabled]="!firstFormGroup.valid">Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="secondFormGroup" [editable]="true">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Educational information</ng-template>
+
+              <form [formGroup]="secondFormGroup.controls['secondaryEducationFormGroup']">
+                <ng-template matStepLabel>Senior Secondary information</ng-template>
+                <div class="info-container col-md-8">
+                  <mat-form-field>
+                    <input matInput placeholder="Serial Number" required formControlName="serialnumber">
+                    <mat-error *ngIf="serialnumber?.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="Marks" required formControlName="marks">
+                    <mat-error *ngIf="marks?.invalid">{{getFirstNameErrorMessage()}}</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="School name" required formControlName="schoolname">
+                    <mat-error *ngIf="schoolname?.invalid">{{getLastNameErrorMessage()}}</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="State" required formControlName="state">
+                    <mat-error *ngIf="state?.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="Board" required formControlName="board">
+                    <mat-error *ngIf="board?.invalid">{{getEmailErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                </div>
+              </form>
+
+              <form [formGroup]="secondFormGroup.controls['higherEducationFormGroup']">
+                <ng-template matStepLabel>Higher Secondary information</ng-template>
+                <div class="info-container col-md-8">
+                  <mat-form-field>
+                    <input matInput placeholder="Serial Number" required formControlName="serialnumber">
+                    <mat-error *ngIf="serialnumber?.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="Marks" required formControlName="marks">
+                    <mat-error *ngIf="marks?.invalid">{{getFirstNameErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="School name" required formControlName="schoolname">
+                    <mat-error *ngIf="schoolname?.invalid">{{getLastNameErrorMessage()}}</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="State" required formControlName="state">
+                    <mat-error *ngIf="state?.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="Board" required formControlName="board">
+                    <mat-error *ngIf="board?.invalid">{{getEmailErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                </div>
+              </form>
+
+              <form [formGroup]="secondFormGroup.controls['ugFormGroup']">
+                <ng-template matStepLabel>Under Graduate information</ng-template>
+                <div class="info-container col-md-8">
+                  <mat-form-field>
+                    <input matInput placeholder="Serial Number" required formControlName="serialnumber">
+                    <mat-error *ngIf="serialnumber?.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="Marks" required formControlName="marks">
+                    <mat-error *ngIf="marks?.invalid">{{getFirstNameErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="School name" required formControlName="collegename">
+                    <mat-error *ngIf="collegename?.invalid">{{getLastNameErrorMessage()}}</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="State" required formControlName="state">
+                    <mat-error *ngIf="state?.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="University" required formControlName="universityname">
+                    <mat-error *ngIf="universityname?.invalid">{{getEmailErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                </div>
+              </form>
+
+              <form [formGroup]="secondFormGroup.controls['pgFormGroup']">
+                <ng-template matStepLabel>Post Graduate information</ng-template>
+                <div class="info-container col-md-8">
+                  <mat-form-field>
+                    <input matInput placeholder="Serial Number" formControlName="serialnumber">
+
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="Marks" formControlName="marks">
+
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="School name" formControlName="collegename">
+
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="State" formControlName="state">
+
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput placeholder="University" formControlName="universityname">
+
+                  </mat-form-field>
+                </div>
+              </form>
+
+              <div class="col-md-12 button-group">
+                <button mat-raised-button matStepperPrevious color="primary">Back</button>
+                <button mat-raised-button matStepperNext color="primary">Next</button>
+              </div>
+            </form>
+
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Other Details</ng-template>
+            You are now done.
+            <div>
+              <button mat-raised-button matStepperPrevious color="primary">Back</button>
+              <button mat-raised-button (click)="stepper.reset()">Save</button>
+            </div>
+          </mat-step>
+
+        </mat-horizontal-stepper>
+
       </div>
-    </div>
-  </div>
+    </mat-tab>
+    <mat-tab label="Seperation">Content 5</mat-tab>
+  </mat-tab-group>
 </div>
