@@ -23,7 +23,7 @@
       class="example-list"
       (cdkDropListDropped)="drop($event)">
       
-      <mat-chip  disableRipple class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</mat-chip>
+      <mat-chip  disableRipple class="example-box" *ngFor="let item of todo" cdkDrag (cdkDragStarted)=dragStart($event)>{{item}}</mat-chip>
     </mat-chip-list>
   </div>
 </mat-card>

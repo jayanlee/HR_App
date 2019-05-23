@@ -4,7 +4,7 @@ import { TodolistComponent } from '../../../app/shared/components/todolist/todol
 import { ProfileComponent } from '../../../app/shared/components/profile/profile.component';
 import { WeatherComponent } from '../../../app/shared/components/weather/weather.component';
 import { GlobalService } from '../../shared/services/global.service';
-import {CdkDragDrop, moveItemInArray,copyArrayItem} from '@angular/cdk/drag-drop';
+import {CdkDragDrop, moveItemInArray,transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-index',
@@ -40,7 +40,7 @@ export class IndexComponent implements OnInit {
     else {
       // console.log("before copy",this.done);
       // console.log("before copy",this.entry.toArray().length);
-      copyArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
+      transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
       // this.copyFlag = true;
     //   console.log("after copy",this.done);
     // if(this.entry)

@@ -1,5 +1,5 @@
 import { Component, Input,OnInit } from '@angular/core';
-import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import {CdkDragDrop, moveItemInArray, CdkDragStart} from '@angular/cdk/drag-drop';
 import { GlobalService } from '../../services/global.service';
 import { KeycloakProfile } from 'keycloak-js';
 
@@ -14,8 +14,9 @@ export class PagesTopComponent implements OnInit{
   configToggle: boolean = false;
   sidebarToggle: boolean = true;
   tip = { ring: true, email: true };
-  todo = [
-    'TodoList',
+  todo = [];
+  todoContent = [
+    'todolist',
     'profile',
     'weather'
   ];
@@ -25,8 +26,17 @@ export class PagesTopComponent implements OnInit{
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     }
   }
+  dragStart(event:CdkDragStart){
+    const tempTodo = event.source.dropContainer.data.slice();
+    const indexValue = tempTodo.indexOf(event.source.element.nativeElement.innerText);
+    const movableValue = tempTodo.splice(indexValue,1).join();
+    // this.todo = tempTodo.slice();
+    event.source.dropContainer.data.splice(indexValue, 0, movableValue);
+    //this.todo.splice(0, 0, "todolist");
+  }
   constructor(private _globalService: GlobalService) {   }
   async ngOnInit() {
+    this.todo = this.todoContent.slice();
     this._globalService.data$.subscribe(data => {
       if (data.ev === 'setStorage') {
         this.userDetails = JSON.parse(localStorage.getItem('userDetails'));
